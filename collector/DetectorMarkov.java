@@ -13,12 +13,12 @@ public class DetectorMarkov {
 
     // ficheiros do ProcMon e da matriz de transição
     private static final String PROCMON_EXE = "collector/Procmon64.exe"; 
-    private static final String FICHEIRO_PML = "collector/recolha_temp.pml";
-    private static final String FICHEIRO_CSV = "collector/chamadas_temp.csv";
-    private static final String FICHEIRO_MATRIZ = "collector/matriz_markov.csv";
+    private static final String FICHEIRO_PML = "collector/treino/recolha_temp.pml";
+    private static final String FICHEIRO_CSV = "collector/treino/chamadas_temp.csv";
+    private static final String FICHEIRO_MATRIZ = "collector/treino/matriz_markov.csv";
 
     // parametros de treino e deteção (em milissegundos)
-    private static final long TEMPO_TREINO_MS = 60 * 1000;
+    private static final long TEMPO_TREINO_MS = 5 * 1000;
     private static final long TEMPO_DETECAO_MS = 15 * 1000; 
     
     // Alerta se P(A->B) < 1%

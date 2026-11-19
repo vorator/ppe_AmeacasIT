@@ -11,7 +11,7 @@ import psutil
 STATES = ['INIT', 'FILE_IO', 'PROC', 'NET_OUT', 'PRIV_EXEC', 'MEM_ALLOC']
 STATE_IDX = {s: i for i, s in enumerate(STATES)}
 
-DURACAO_SEGUNDOS = 60.0     # duração da monitarização de treino 
+DURACAO_SEGUNDOS = 5.0     # duração da monitarização de treino 
 INTERVALO_LEITURA = 0.01    # intervalo de snapshot (50 Hz)
 FATOR_AUMENTO = 2.0         # 100% de aumento
 MIN_EVENTOS_NORMA = 5       # Piso mínimo para evitar falsos positivos
@@ -111,7 +111,7 @@ while (time.perf_counter() - t_inicio) < DURACAO_SEGUNDOS:
     anterior = atual
 
 # Gravar a norma em CSV
-nome_ficheiro = 'trace_norma.csv'
+nome_ficheiro = 'collector/treino/norma_poisson.csv'
 with open(nome_ficheiro, mode='w', newline='', encoding='utf-8') as f:
     writer = csv.writer(f)
     writer.writerow([
